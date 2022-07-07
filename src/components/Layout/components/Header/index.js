@@ -48,7 +48,7 @@ function Header() {
                 </Tippy>
                 <div className={cx('action')}>
                     <Button text>Upload</Button>
-                    <Button primary to="/login">
+                    <Button primary leftIcon={<FontAwesomeIcon icon={faMagnifyingGlass} />}>
                         Log in
                     </Button>
                 </div>

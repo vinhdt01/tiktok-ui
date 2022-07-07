@@ -7,22 +7,33 @@ function Button({
     href,
     primary = false,
     outline = false,
+    disabled = false,
     small = false,
     large = false,
     text = false,
+    rounded = false,
     children,
+    className,
+    leftIcon,
     onClick,
     ...passProps
 }) {
     let Comp = 'button';
-    console.log(primary);
-    const classes = cx('wrapper', { primary, outline, text, small, large });
+    const classes = cx('wrapper', { [className]: className, primary, outline, text, rounded, disabled, small, large });
+    console.log(className);
     const props = {
         onClick,
+
         ...passProps,
     };
-    console.log(passProps);
-
+    //remove event listeners when button have disabled properties
+    if (disabled) {
+        Object.keys(props).forEach((key) => {
+            if (key.startsWith('on') && typeof props[key] === 'function') {
+                delete props[key];
+            }
+        });
+    }
     if (to) {
         props.to = to;
         Comp = Link;
