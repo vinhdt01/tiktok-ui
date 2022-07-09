@@ -1,0 +1,22 @@
+.menu-list {
+    width: 224px;
+    .memu-item {
+        margin-left: 0px;
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+    }
+}
+.memu-item {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0px;
+    font-weight: 600;
+    padding: 11px 16px;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+.menu-popper {
+    padding-bottom: 8px;
+}
