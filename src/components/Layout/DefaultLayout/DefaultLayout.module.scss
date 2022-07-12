@@ -5,6 +5,8 @@
 }
 .container {
     width: var(--defalt-layout-width, 1150px);
+    padding:0 var(--defalt-layout-horizontal-spacer);
+
     display: flex;
 }
 .content {

@@ -12,6 +12,7 @@
 }
 .inner {
     height: 100%;
+    padding:0 var(--defalt-layout-horizontal-spacer);
     width: var(--defalt-layout-width, 1150px);
     display: flex;
     align-items: center;

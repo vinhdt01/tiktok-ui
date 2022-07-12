@@ -4,12 +4,11 @@ import styles from './Menu.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-function MenuItem({ data }) {
+function MenuItem({ data, onClick }) {
     const cx = classNames.bind(styles);
 
-    console.log(data, 'nhu...');
     return (
-        <Button leftIcon={data.icon} to={data.to} className={cx('memu-item')}>
+        <Button leftIcon={data.icon} to={data.to} className={cx('memu-item')} onClick={onClick}>
             {data.title}
         </Button>
     );
