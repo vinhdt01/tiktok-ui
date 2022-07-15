@@ -1,25 +1,25 @@
 .menu-list {
     width: 224px;
-    .memu-item {
+    .menu-item {
         margin-left: 0px;
-        &:hover {
-            background-color: rgba(22, 24, 35, 0.03);
-        }
-    }
-}
-.memu-item {
-    width: 100%;
-    justify-content: flex-start;
-    border-radius: 0px;
-    font-weight: 600;
-    padding: 11px 16px;
-    line-height: 1.8rem;
-    &:hover {
-        background-color: rgba(22, 24, 35, 0.03);
     }
 }
 .menu-popper {
     padding-bottom: 8px;
+}
+.menu-item {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0px;
+    padding: 11px 16px;
+    line-height: 1.8rem;
+    font-weight:600;
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
 }
 
 ////////////////////////////////
