@@ -18,6 +18,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import AccountItem from '~/components/AccountItem';
 import styles from './Header.module.scss';
 import images from '~/asses/images';
+import Image from '~/components/image/index';
 import Button from '~/components/Button/index';
 import Tippy from '@tippyjs/react';
 
@@ -26,6 +27,8 @@ import 'tippy.js/dist/tippy.css';
 
 import Menu from '~/components/Popper/Menu/index';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
+import { UploadIcon } from '~/components/Icons/index';
+
 function Header() {
     const cx = classNames.bind(styles);
     const [searchResult, setSearchResult] = useState([]);
@@ -134,7 +137,8 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    {/* <FontAwesomeIcon icon={faCloudUpload} /> */}
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -146,7 +150,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt="user-avatar"
                                 src="https://kenh14cdn.com/thumb_w/660/2020/9/12/whynotchao508262882833455156913728299053622333116833n-1599900492232643493066.jpg"
