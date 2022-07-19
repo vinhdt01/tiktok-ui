@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
-    faCircleXmark,
     faEarthAsia,
     faEllipsisVertical,
-    faMagnifyingGlass,
     faKeyboard,
     faCloudUpload,
     faMessage,
@@ -15,23 +13,20 @@ import {
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import AccountItem from '~/components/AccountItem';
 import styles from './Header.module.scss';
 import images from '~/asses/images';
 import Image from '~/components/image/index';
 import Button from '~/components/Button/index';
 import Tippy from '@tippyjs/react';
 
-import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
 import Menu from '~/components/Popper/Menu/index';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import { UploadIcon } from '~/components/Icons/index';
+import Search from '../Search/index';
+import { UploadIcon, MessageIcon, InboxIcon } from '~/components/Icons/index';
 
 function Header() {
     const cx = classNames.bind(styles);
-    const [searchResult, setSearchResult] = useState([]);
     const currentUser = true;
 
     const MENU_ITEMS = [
@@ -64,11 +59,7 @@ function Header() {
             title: 'Keyboard Shortcuts',
         },
     ];
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, []);
+
     // handle logic
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -105,7 +96,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <img src={images.logo} alt="logo" />
-                <HeadlessTippy
+                {/* <HeadlessTippy
                     visible={searchResult.length > 0}
                     interactive
                     render={(attrs) => (
@@ -131,14 +122,24 @@ function Header() {
                             </span>
                         </button>
                     </div>
-                </HeadlessTippy>
+                </HeadlessTippy> */}
+                <Search />
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    {/* <FontAwesomeIcon icon={faCloudUpload} /> */}
                                     <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
