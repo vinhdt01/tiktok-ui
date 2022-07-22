@@ -1,4 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
+import * as searchServices from '~/apiServices/searchServices';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDebounce } from '~/hooks/index';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
@@ -23,14 +26,28 @@ function Search() {
             setSearchResult([]);
             return;
         }
-        setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
+        // setLoading(true);
+        // const handle = async () => {
+        //     try {
+        //         const res = await request.get(`users/search`, {
+        //             params: {
+        //                 q: debounced,
+        //                 type: 'less',
+        //             },
+        //         });
+
+        //         setSearchResult(res.data);
+        //         setLoading(false);
+        //     } catch (error) {
+        //         setLoading(false);
+        //     }
+        const fetchApi = async () => {
+            setLoading(true);
+            const result = await searchServices.search(debounced);
+            setSearchResult(result);
+            setLoading(false);
+        };
+        fetchApi();
     }, [debounced]);
     const handleClear = () => {
         setSearchResult([]);
