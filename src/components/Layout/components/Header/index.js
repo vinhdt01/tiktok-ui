@@ -1,4 +1,7 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import routesConfig from '~/config/routers';
+
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -95,7 +98,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="logo" />
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="logo" />
+                </Link>
 
                 <Search />
                 <div className={cx('actions')}>
@@ -114,6 +119,7 @@ function Header() {
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>
