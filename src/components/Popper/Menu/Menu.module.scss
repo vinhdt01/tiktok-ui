@@ -7,13 +7,16 @@
 .menu-popper {
     padding-bottom: 8px;
 }
+.menu-body {
+    overflow: auto;
+}
 .menu-item {
     width: 100%;
     justify-content: flex-start;
     border-radius: 0px;
     padding: 11px 16px;
     line-height: 1.8rem;
-    font-weight:600;
+    font-weight: 600;
     &.separate {
         border-top: 1px solid rgba(22, 24, 35, 0.12);
     }
@@ -25,6 +28,7 @@
 ////////////////////////////////
 .header {
     position: relative;
+    flex-shrink: 0;
     height: 50px;
     margin-top: -8px;
 }

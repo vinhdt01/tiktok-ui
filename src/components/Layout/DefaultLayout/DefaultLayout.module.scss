@@ -5,11 +5,11 @@
 }
 .container {
     width: var(--defalt-layout-width, 1150px);
-    padding:0 var(--defalt-layout-horizontal-spacer);
+    padding: 0 var(--defalt-layout-horizontal-spacer);
+    margin-top: var(--defalt-layout-header-height);
 
     display: flex;
 }
 .content {
     flex: 1;
-    min-height: 1000px;
 }
