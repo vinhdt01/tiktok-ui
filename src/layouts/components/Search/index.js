@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchService from '~/services/searchService';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDebounce } from '~/hooks/index';
@@ -43,7 +42,7 @@ function Search() {
         //     }
         const fetchApi = async () => {
             setLoading(true);
-            const result = await searchServices.search(debounced);
+            const result = await searchService.search(debounced);
             setSearchResult(result);
             setLoading(false);
         };

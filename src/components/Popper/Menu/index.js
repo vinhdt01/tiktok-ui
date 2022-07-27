@@ -2,14 +2,13 @@ import { useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import Hearder from './Header';
 import MenuItem from './MenuItem';
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
-function Menu({ children, items = [], hideOneClick = false, onChange = defaultFn , }) {
+function Menu({ children, items = [], hideOneClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItems = () => {
