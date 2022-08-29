@@ -36,8 +36,8 @@ function Sidebar() {
                     activeIcon={<LiveActiveIcon />}
                 ></MenuItem>
             </Menu>
-            <h1>Suggested accounts</h1>
-            <SuggestedAccounts />
+            {/* <h1 className={cx('suggested')}></h1> */}
+            <SuggestedAccounts label="Suggested accounts" />
         </aside>
     );
 }
