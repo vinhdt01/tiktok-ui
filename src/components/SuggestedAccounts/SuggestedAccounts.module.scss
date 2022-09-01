@@ -1,17 +1,17 @@
 .wrapper {
-    border-top:1px solid #e3e3e4;
+    border-top: 1px solid #e3e3e4;
 }
 .label {
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 20px;
-    padding:8px ;
-
+    padding: 8px;
 }
 .account-item {
     display: flex;
     align-items: center;
     padding: 8px;
+    cursor: pointer;
 }
 .avatar {
     width: 32px;
@@ -38,9 +38,9 @@
     color: #161823bf;
 }
 .more-btn {
-    color:#fe2c55;
+    color: #fe2c55;
     font-weight: 600;
     font-size: 1.4rem;
-    padding:8px;
-    cursor:pointer
+    padding: 8px;
+    cursor: pointer;
 }
